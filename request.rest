@@ -1,0 +1,29 @@
+### Get semua user
+GET http://localhost:3000/users
+Content-Type: application/json
+
+### Get user by id
+GET http://localhost:3000/users/1
+Content-Type: application/json
+
+### POST create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "FbV5y@example.com",
+    "gender": "male"
+}
+### POST UPDATE user
+PATCH http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+    "name": "John FIKRI",
+    "email": "JHON@example.com",
+    "gender": "male"
+}
+### POST DELETE user
+DELETE http://localhost:3000/users/2
+Content-Type: application/json
