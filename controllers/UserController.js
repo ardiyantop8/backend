@@ -22,7 +22,12 @@ export const getUserById = async (req, res) => {
 }
 export const createUser = async (req, res) => {
     try {
-        await User.create(req.body);
+        const jakartaTime = moment().tz("Asia/Jakarta").format(); // ambil waktu Jakarta
+        await User.create({
+            ...req.body,
+            createdAt: jakartaTime, // set createdAt
+            updatedAt: jakartaTime // set updatedAt
+        });
         res.status(201).json({msg: "user has been created"});
     } catch (error) {
         console.log(error.message);

@@ -7,7 +7,8 @@ GET http://localhost:3000/users/1
 Content-Type: application/json
 
 ### POST create user
-POST http://localhost:3000/users
+# POST http://localhost:3000/users
+POST https://backend-production-e645.up.railway.app/users
 Content-Type: application/json
 
 {
