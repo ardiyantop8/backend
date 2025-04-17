@@ -11,6 +11,9 @@ dependencies:
   express:
     specifier: ^5.1.0
     version: 5.1.0
+  moment-timezone:
+    specifier: ^0.5.48
+    version: 0.5.48
   mysql2:
     specifier: ^3.14.0
     version: 3.14.0
