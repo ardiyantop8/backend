@@ -13,9 +13,9 @@ POST https://backend-production-e645.up.railway.app/users
 Content-Type: application/json
 
 {
-    "name": "Ardiyanto Putra",
-    "email": "Ardiy@example.com",
-    "gender": "male"
+    "name": "Nayyara Fayola",
+    "email": "Nay@fam.com",
+    "gender": "female"
 }
 ### POST UPDATE user
 PATCH http://localhost:3000/users/1

@@ -24,6 +24,7 @@ export const getUserById = async (req, res) => {
 export const createUser = async (req, res) => {
     try {
         const jakartaTime = moment().tz("Asia/Jakarta").format(); // ambil waktu Jakarta
+        console.log(jakartaTime);
         await User.create({
             ...req.body,
             createdAt: jakartaTime, // set createdAt

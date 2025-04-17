@@ -10,7 +10,10 @@ const User = db.define(
         email: DataTypes.STRING,
         gender: DataTypes.STRING
     },
-    {freezeTableName: true}
+    {
+        freezeTableName: true,
+        timestamps: false,
+    }
 );
 
 export default User;
