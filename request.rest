@@ -1,5 +1,6 @@
 ### Get semua user
-GET http://localhost:3000/users
+# GET http://localhost:3000/users
+GET https://backend-production-e645.up.railway.app/users
 Content-Type: application/json
 
 ### Get user by id
@@ -12,8 +13,8 @@ POST https://backend-production-e645.up.railway.app/users
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "FbV5y@example.com",
+    "name": "Ardiyanto Putra",
+    "email": "Ardiy@example.com",
     "gender": "male"
 }
 ### POST UPDATE user

@@ -1,4 +1,5 @@
 import User from "../models/UserModel.js";
+import moment from "moment-timezone"; // install moment-timezone
 
 export const getUsers = async (req, res) => {
     try {
