@@ -6,10 +6,9 @@ import {
     updateUser,
     deleteUser
 } from "../controllers/UserController.js";
-// const LoginController = require('../controllers/LoginController');
-import {
-    createUserLogin,
-} from "../controllers/LoginController.js";
+// import {
+//     createUserLogin,
+// } from "../controllers/LoginController.js";
 
 const router = express.Router();
 
@@ -18,6 +17,6 @@ router.get("/users/:id", getUserById);
 router.post("/users", createUser);
 router.patch("/users/:id", updateUser);
 router.delete("/users/:id", deleteUser);
-router.post('/register', createUserLogin);
+// router.post('/register', createUserLogin);
 
 export default router;
