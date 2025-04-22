@@ -1,4 +1,4 @@
-const User = require('../models/UserModel');
+const Login = require('../models/LoginModel');
 
 const LoginController = {
   register: async (req, res) => {
@@ -9,7 +9,7 @@ const LoginController = {
         return res.status(400).json({ message: 'Username dan password harus diisi.' });
       }
 
-      await User.create(username, password);
+      await Login.create(username, password);
 
       res.status(201).json({ message: 'User berhasil didaftarkan.' });
     } catch (error) {

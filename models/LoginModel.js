@@ -1,7 +1,7 @@
 const db = require('../config/database'); // file koneksi db kamu
 const bcrypt = require('bcrypt');
 
-const User = {
+const Login = {
   create: async (username, password) => {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -26,4 +26,27 @@ const User = {
   }
 };
 
-module.exports = User;
+module.exports = Login;
+
+// import { Sequelize } from "sequelize";
+// import db from "../config/Database.js";
+
+// const { DataTypes } = Sequelize;
+
+// const Login = db.define(
+//     'login',
+//     {
+//         username: DataTypes.STRING,
+//         password: DataTypes.STRING,
+//     },
+//     {
+//         freezeTableName: true,
+//         timestamps: false,
+//     }
+// );
+
+// export default Login;
+
+// (async () => {
+//     await db.sync();
+// })();
