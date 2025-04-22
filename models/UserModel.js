@@ -8,7 +8,15 @@ const User = db.define(
     {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
-        gender: DataTypes.STRING
+        gender: DataTypes.STRING,
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        }
     },
     {
         freezeTableName: true,
