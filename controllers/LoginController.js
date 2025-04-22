@@ -23,14 +23,10 @@
 
 
 import Login from "../models/LoginModel.js";
-import moment from "moment-timezone"; // install moment-timezone
 export const createUserLogin = async (req, res) => {
     try {
-        const jakartaTime = moment().tz("Asia/Jakarta").format(); // ambil waktu Jakarta
         await Login.create({
             ...req.body,
-            // createdAt: jakartaTime, // set createdAt
-            // updatedAt: jakartaTime // set updatedAt
         });
         res.status(201).json({msg: "user login has been created"});
     } catch (error) {
