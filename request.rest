@@ -27,5 +27,5 @@ Content-Type: application/json
     "gender": "male"
 }
 ### POST DELETE user
-DELETE http://localhost:3000/users/2
+DELETE http://localhost:3000/users/118
 Content-Type: application/json

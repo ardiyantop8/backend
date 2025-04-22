@@ -1,14 +1,32 @@
 import User from "../models/UserModel.js";
 import moment from "moment-timezone"; // install moment-timezone
 
+// export const getUsers = async (req, res) => {
+//     try {
+//         const response = await User.findAll();
+//         res.status(200).json(response);
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
+
 export const getUsers = async (req, res) => {
     try {
-        const response = await User.findAll();
+        const page = parseInt(req.query.page) || 1; // default ke page 1
+        const limit = 10;
+        const offset = (page - 1) * limit;
+
+        const response = await User.findAll({
+            limit: limit,
+            offset: offset
+        });
+
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);
+        res.status(500).json({ message: "Server Error" });
     }
-}
+};
 export const getUserById = async (req, res) => {
     try {
         const response = await User.findOne({
