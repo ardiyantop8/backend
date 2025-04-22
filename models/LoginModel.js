@@ -31,25 +31,25 @@
 
 
 
-// import { Sequelize } from "sequelize";
-// import db from "../config/Database.js";
+import { Sequelize } from "sequelize";
+import db from "../config/Database.js";
 
-// const { DataTypes } = Sequelize;
+const { DataTypes } = Sequelize;
 
-// const Login = db.define(
-//     'login',
-//     {
-//         username: DataTypes.STRING,
-//         password: DataTypes.STRING,
-//     },
-//     {
-//         freezeTableName: true,
-//         timestamps: false,
-//     }
-// );
+const Login = db.define(
+    'login',
+    {
+        username: DataTypes.STRING,
+        password: DataTypes.STRING,
+    },
+    {
+        freezeTableName: true,
+        timestamps: false,
+    }
+);
 
-// export default Login;
+export default Login;
 
-// (async () => {
-//     await db.sync();
-// })();
+(async () => {
+    await db.sync();
+})();

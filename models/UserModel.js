@@ -16,7 +16,8 @@ const User = db.define(
         updatedAt: {
             type: DataTypes.DATE,
             allowNull: false,
-        }
+        },
+        password: DataTypes.STRING
     },
     {
         freezeTableName: true,
