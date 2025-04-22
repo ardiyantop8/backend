@@ -43,6 +43,7 @@ export const createUser = async (req, res) => {
     try {
         const jakartaTime = moment().tz("Asia/Jakarta").format(); // ambil waktu Jakarta
         console.log(jakartaTime);
+        console.log("WAW:", req.body);
         await User.create({
             ...req.body,
             createdAt: jakartaTime, // set createdAt
