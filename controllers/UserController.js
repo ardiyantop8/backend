@@ -55,6 +55,7 @@ export const createUser = async (req, res) => {
     }
 }
 export const updateUser = async (req, res) => {
+    console.log("REQUPDATE:",req.params);
     try {
         await User.update(req.body,{
             where:{
