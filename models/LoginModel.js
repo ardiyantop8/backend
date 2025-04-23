@@ -33,6 +33,7 @@
 
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import bcrypt from "bcrypt"; // <-- Tambahkan bcrypt
 
 const { DataTypes } = Sequelize;
 
@@ -45,6 +46,20 @@ const Login = db.define(
     {
         freezeTableName: true,
         timestamps: false,
+        hooks: {
+            beforeCreate: async (login, options) => {
+                if (login.password) {
+                    const salt = await bcrypt.genSalt(10);
+                    login.password = await bcrypt.hash(login.password, salt);
+                }
+            },
+            beforeUpdate: async (login, options) => {
+                if (login.changed('password')) { // hanya encrypt kalau password berubah
+                    const salt = await bcrypt.genSalt(10);
+                    login.password = await bcrypt.hash(login.password, salt);
+                }
+            },
+        },
     }
 );
 
