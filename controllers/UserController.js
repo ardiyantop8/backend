@@ -41,9 +41,23 @@ export const getUserById = async (req, res) => {
 }
 export const createUser = async (req, res) => {
     try {
+        const { name, email, gender, password } = req.body;
+
+        // Validasi: kosong string
+        if (!name || name.trim() === '' ) {
+            return res.status(400).json({ msg: "name tidak boleh kosong!" });
+        }
+        if (!email || email.trim() === '' ) {
+            return res.status(400).json({ msg: "email tidak boleh kosong!" });
+        }
+        if (!gender || gender.trim() === '' ) {
+            return res.status(400).json({ msg: "Jenis kelamin tidak boleh kosong!" });
+        }
+        if (!password || password.trim() === '' ) {
+            return res.status(400).json({ msg: "Password tidak boleh kosong!" });
+        }
         const jakartaTime = moment().tz("Asia/Jakarta").format(); // ambil waktu Jakarta
-        console.log(jakartaTime);
-        console.log("WAW:", req.body);
+        
         await User.create({
             ...req.body,
             createdAt: jakartaTime, // set createdAt
