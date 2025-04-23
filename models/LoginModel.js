@@ -33,7 +33,7 @@
 
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
-import bcrypt from "bcrypt"; // <-- Tambahkan bcrypt
+import bcrypt from "bcryptjs"; // <-- Tambahkan bcrypt
 
 const { DataTypes } = Sequelize;
 
