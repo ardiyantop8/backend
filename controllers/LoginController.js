@@ -25,12 +25,12 @@
 import Login from "../models/LoginModel.js";
 export const createUserLogin = async (req, res) => {
     try {
-        // const { username, password } = req.body;
+        const { username, password } = req.body;
 
-        // // Validasi: cek kalau username atau password kosong string
-        // if (!username || !password || username.trim() === '' || password.trim() === '') {
-        //     return res.status(400).json({ msg: "Username dan Password tidak boleh kosong!" });
-        // }
+        // Validasi: cek kalau username atau password kosong string
+        if (!username || !password || username.trim() === '' || password.trim() === '') {
+            return res.status(400).json({ msg: "Username dan Password tidak boleh kosong!" });
+        }
 
         await Login.create({
             ...req.body,
