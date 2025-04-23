@@ -31,7 +31,7 @@ export const createUserLogin = async (req, res) => {
         if (!username || !password || username.trim() === '' || password.trim() === '') {
             return res.status(400).json({ msg: "Username dan Password tidak boleh kosong!" });
         }
-        
+
         await Login.create({
             ...req.body,
         });
@@ -41,22 +41,22 @@ export const createUserLogin = async (req, res) => {
     }
 }
 
-export const updateLogin = async (req, res) => {
-    try {
-        const { username, password } = req.body;
+// export const updateLogin = async (req, res) => {
+//     try {
+//         const { username, password } = req.body;
 
-        // Validasi: cek kalau username atau password kosong string
-        if (!username || !password || username.trim() === '' || password.trim() === '') {
-            return res.status(400).json({ msg: "Username dan Password tidak boleh kosong!" });
-        }
+//         // Validasi: cek kalau username atau password kosong string
+//         if (!username || !password || username.trim() === '' || password.trim() === '') {
+//             return res.status(400).json({ msg: "Username dan Password tidak boleh kosong!" });
+//         }
 
-        await Login.update(req.body,{
-            where:{
-                username:req.params.username
-            }
-        });
-        res.status(200).json({msg: "data has been updated"});
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+//         await Login.update(req.body,{
+//             where:{
+//                 username:req.params.username
+//             }
+//         });
+//         res.status(200).json({msg: "data has been updated"});
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
